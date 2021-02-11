@@ -1,0 +1,17 @@
+{
+    "private": true,
+    "scripts": {
+        "start": "http-server -o"
+    },
+    "devDependencies": {
+        "@babel/core": "^7.8.4",
+        "@babel/preset-env": "^7.8.4",
+        "autoprefixer": "^9.7.4",
+        "cssnano": "^4.1.10",
+        "gulp": "^4.0.2",
+        "gulp-babel": "^8.0.0-beta.2",
+        "gulp-concat": "^2.6.1",
+        "gulp-postcss": "^8.0.0",
+        "gulp-uglify": "^3.0.2"
+    }
+}

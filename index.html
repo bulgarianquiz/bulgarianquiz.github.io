@@ -1,12 +1,43 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="bg-BG">
+
 <head>
     <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Българска викторина</title>
+    <link rel="icon" href="images/favicon-32x32.png" type="image/png">
+    <link rel="manifest" href="manifest.json">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="white">
+    <meta name="apple-mobile-web-app-title" content="BulgarianQuiz">
+    <link rel="apple-touch-icon" href="images/favicon-152x152.png">
+    <meta name="description" content="BulgarianQuiz">
+    <meta name="theme-color" content="#fff">
+    <link rel="stylesheet" href="dist/app.min.css?version=32">
 </head>
+
 <body>
-    <h1>test</h1>
+    <noscript>
+        <p>
+            За да играете BulgarianQuiz трябва да разрешите скриптовете от настройките на браузъра. За повече информация
+            -
+            <a href="https://www.enable-javascript.com" target="blank">https://www.enable-javascript.com</a>
+        </p>
+    </noscript>
+    <main>
+        <div class="container"></div>
+    </main>
+    <script>
+        if ('serviceWorker' in navigator) {
+            navigator.serviceWorker.register('../service-worker.js');
+        }
+    </script>
+
+    <script src="dist/app.min.js?version=32"></script>
+    <script>
+        var app = new App();
+    </script>
 </body>
+
 </html>

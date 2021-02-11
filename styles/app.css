@@ -1,0 +1,165 @@
+* {
+    box-sizing: border-box;
+}
+
+html {
+    font-size: calc(16px + 6 * ((100vw - 320px) / 1024));
+}
+
+html,
+body {
+    height: 100%;
+}
+
+body {
+    font-family: sans-serif;
+    background: linear-gradient(#06beb6, #48b1bf);
+    margin: 0;
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+    user-select: none;
+    line-height: 1.4;
+}
+
+main {
+    position: relative;
+    overflow: hidden;
+}
+
+.timer {
+    padding: 2rem;
+    border-bottom: 1px dashed rgba(0, 0, 0, .2);
+}
+
+.timer .wrap {
+    position: relative;
+    overflow: hidden;
+    height: .25rem;
+    border-radius: .125rem;
+}
+
+.timer .mask,
+.timer .line {
+    border-radius: .125rem;
+    position: absolute;
+    top: 0;
+    bottom: 0;
+}
+
+.timer .mask {
+    background: rgba(0, 0, 0, .2);
+    left: 0;
+    right: 0;
+    z-index: 1;
+}
+
+.timer .line {
+    background: #fafafa;
+    z-index: 2;
+    transition-duration: .25s;
+    width: 100%;
+}
+
+.question {
+    color: #fafafa;
+    font-size: 1.5rem;
+    padding: 2rem;
+}
+
+.answers {
+    display: flex;
+    flex-direction: column;
+    padding: 2rem;
+}
+
+.answer {
+    font-family: inherit;
+    display: block;
+    border: 0;
+    outline: none;
+    text-align: left;
+    font-size: 1.125rem;
+    padding: 1rem 1.25rem;
+    margin-bottom: 1.25rem;
+    background: rgba(0, 0, 0, .2);
+    color: #fafafa;
+    border-radius: .75rem;
+    cursor: pointer;
+    transition-timing-function: cubic-bezier(.4, .0, .2, 1);
+    transition-duration: .25s;
+    transition-property: transform, color, background, opacity;
+}
+
+.answer:last-child {
+    margin: 0;
+}
+
+.answer.is-marked {
+    background: rgba(0, 0, 0, .6);
+}
+
+.answer.is-correct {
+    background: #fafafa;
+    color: #263238;
+}
+
+.answer.is-disabled {
+    opacity: .4;
+    pointer-events: none;
+}
+
+.fab {
+    position: fixed;
+    padding: 1rem;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background: #fafafa;
+    cursor: pointer;
+    border-radius: 50%;
+    box-shadow: 0 3px 5px -1px rgba(0, 0, 0, .2), 0 6px 10px 0 rgba(0, 0, 0, .14), 0 1px 18px 0 rgba(0, 0, 0, .12);
+    outline: none;
+    border: 0;
+    transition-timing-function: cubic-bezier(.4, .0, .2, 1);
+    transition-duration: .25s;
+    transition-property: box-shadow;
+}
+
+.fab > svg {
+    fill: #263238;
+    width: 1.5rem;
+    height: 1.5rem;
+    pointer-events: none;
+}
+
+.fab:active {
+    box-shadow: 0 7px 8px -4px rgba(0, 0, 0, .2), 0 12px 17px 2px rgba(0, 0, 0, .14), 0 5px 22px 4px rgba(0, 0, 0, .12);
+}
+
+.next-question-button {
+    left: 50%;
+    transform: translateX(-50%);
+    animation-name: fadeInNextQuestionButtonAnimation;
+    animation-fill-mode: forwards;
+    animation-duration: .5s;
+    animation-timing-function: cubic-bezier(.4, .0, .2, 1);
+}
+
+@media only screen and (min-width: 768px) {
+    .container {
+        max-width: 1024px;
+        margin: auto;
+    }
+}
+
+@keyframes fadeInNextQuestionButtonAnimation {
+    from {
+        bottom: 0;
+        opacity: 0;
+    }
+
+    to {
+        bottom: 2rem;
+        opacity: 1;
+    }
+}
