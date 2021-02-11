@@ -1,1 +1,0 @@
-# bulgarianquiz.github.io
