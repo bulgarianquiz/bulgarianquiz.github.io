@@ -28,42 +28,40 @@ main {
 
 .timer {
     padding: 2rem;
-    border-bottom: 1px dashed rgba(0, 0, 0, .2);
 }
 
 .timer .wrap {
     position: relative;
     overflow: hidden;
-    height: .25rem;
-    border-radius: .125rem;
-}
-
-.timer .mask,
-.timer .line {
-    border-radius: .125rem;
-    position: absolute;
-    top: 0;
-    bottom: 0;
+    height: .125rem;
+    border-radius: .0625rem;
+    display: flex;
+    justify-content: center;
 }
 
 .timer .mask {
-    background: rgba(0, 0, 0, .2);
+    position: absolute;
+    top: 0;
+    bottom: 0;
     left: 0;
     right: 0;
+    background: rgba(0, 0, 0, .2);
     z-index: 1;
 }
 
 .timer .line {
     background: #fafafa;
     z-index: 2;
-    transition-duration: .25s;
     width: 100%;
+    border-radius: .0625rem;
+    transition-duration: .25s;
 }
 
 .question {
     color: #fafafa;
-    font-size: 1.5rem;
+    font-size: 1.25rem;
     padding: 2rem;
+    text-align: center;
 }
 
 .answers {
@@ -78,16 +76,17 @@ main {
     border: 0;
     outline: none;
     text-align: left;
-    font-size: 1.125rem;
+    font-size: .875rem;
     padding: 1rem 1.25rem;
-    margin-bottom: 1.25rem;
+    margin-bottom: 1rem;
     background: rgba(0, 0, 0, .2);
     color: #fafafa;
-    border-radius: .75rem;
+    border-radius: 1rem;
     cursor: pointer;
     transition-timing-function: cubic-bezier(.4, .0, .2, 1);
     transition-duration: .25s;
     transition-property: transform, color, background, opacity;
+    text-align: center;
 }
 
 .answer:last-child {
@@ -127,8 +126,8 @@ main {
 
 .fab > svg {
     fill: #263238;
-    width: 1.5rem;
-    height: 1.5rem;
+    width: 1.125rem;
+    height: 1.125rem;
     pointer-events: none;
 }
 
